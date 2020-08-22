@@ -1,12 +1,14 @@
 import React, { forwardRef, ComponentPropsWithoutRef } from 'react';
 
-const Button = forwardRef<HTMLButtonElement, ComponentPropsWithoutRef<'button'>>(
-    ({ children, ...props }, ref) => (
-        <button ref={ref} {...props}>
-            {children}
-        </button>
-    )
-);
+interface IProps extends ComponentPropsWithoutRef<'button'> {
+    isLoading?: boolean;
+}
+
+const Button = forwardRef<HTMLButtonElement, IProps>(({ children, ...props }, ref) => (
+    <button ref={ref} {...props}>
+        {children}
+    </button>
+));
 
 Button.displayName = 'Button';
 
