@@ -5,13 +5,15 @@ import Theme, { theming } from '../Theme';
 
 const { useTheme } = theming;
 
-const useStyles = createUseStyles(
-    {
+const useStyles = createUseStyles<Theme>(
+    (theme) => ({
         button: {
-            background: ({ theme }: { theme: Theme }) => theme.colors.primary,
+            background: theme.colors.primary,
         },
-    },
-    { theming }
+    }),
+    {
+        theming,
+    }
 );
 
 interface IProps extends ComponentPropsWithoutRef<'button'> {
