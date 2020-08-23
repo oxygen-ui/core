@@ -1,35 +1,25 @@
 import React, { forwardRef, ComponentPropsWithoutRef } from 'react';
-import { createUseStyles } from 'react-jss';
 
-import Theme, { theming } from '../Theme';
+import { useStyles, useTheme } from './button.styles';
 
-const { useTheme } = theming;
-
-const useStyles = createUseStyles<Theme>(
-    (theme) => ({
-        button: {
-            background: theme.colors.primary,
-        },
-    }),
-    {
-        theming,
-    }
-);
-
-interface IProps extends ComponentPropsWithoutRef<'button'> {
+export interface ButtonProps {
     isLoading?: boolean;
 }
 
-const Button = forwardRef<HTMLButtonElement, IProps>(({ children, ...props }, ref) => {
-    const theme = useTheme();
-    const classes = useStyles({ ...props, theme });
+type CombinedProps = ButtonProps & ComponentPropsWithoutRef<'button'>;
 
-    return (
-        <button ref={ref} className={classes.button} {...props}>
-            {children}
-        </button>
-    );
-});
+const Button = forwardRef<HTMLButtonElement, CombinedProps>(
+    ({ children, isLoading, ...props }, ref) => {
+        const theme = useTheme();
+        const classes = useStyles({ isLoading, theme });
+
+        return (
+            <button ref={ref} className={classes.button} {...props}>
+                {children}
+            </button>
+        );
+    }
+);
 
 Button.displayName = 'Button';
 
