@@ -6,3 +6,5 @@ export default interface Colors {
     success: string;
     warning: string;
 }
+
+export type Color = 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning';
