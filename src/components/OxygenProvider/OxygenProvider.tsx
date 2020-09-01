@@ -1,8 +1,7 @@
 import React, { FC } from 'react';
 
-import { theming } from '../Theme';
+import { theming, defaultTheme } from '../Theme';
 import Theme from '../Theme';
-import defaultTheme from './defaultTheme';
 
 const { ThemeProvider } = theming;
 
