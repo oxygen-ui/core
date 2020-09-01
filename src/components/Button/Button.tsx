@@ -23,7 +23,7 @@ const Button = forwardRef<HTMLButtonElement, CombinedProps>(
         return (
             <button
                 ref={ref}
-                className={`${classes.button} ${className}`.trim()}
+                className={`${classes.button} ${className || ''}`.trim()}
                 disabled={disabled}
                 {...props}>
                 {children}
