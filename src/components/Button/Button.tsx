@@ -1,5 +1,5 @@
 import React, { forwardRef, ComponentPropsWithoutRef, useContext } from 'react';
-
+import classNames from 'classnames';
 import { useStyles } from './button.styles';
 import { ThemeContext, Color, Size } from '../../theme';
 import ParseThemeType from '../../utils/ParseThemeType';
@@ -30,7 +30,7 @@ const Button = forwardRef<HTMLButtonElement, CombinedProps>(
         return (
             <button
                 ref={ref}
-                className={`${classes.button} ${className || ''}`.trim()}
+                className={classNames(classes.button, className)}
                 disabled={disabled}
                 {...props}>
                 {children}
