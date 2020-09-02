@@ -1,12 +1,12 @@
 import React, { FC } from 'react';
 
-import { theming, defaultTheme } from '../Theme';
-import Theme from '../Theme';
+import Theme, { theming, defaultTheme, ThemeType } from '../../theme';
 
 const { ThemeProvider } = theming;
 
 interface Props {
     theme?: Theme;
+    type?: ThemeType;
 }
 
 const OxygenProvider: FC<Props> = ({ children, theme }) => (

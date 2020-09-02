@@ -1,4 +1,4 @@
-import Theme from '../Theme';
+import Theme from '../theme';
 
 const defaultTheme: Theme = {
     colors: {

@@ -1,8 +1,8 @@
 import React, { forwardRef, ComponentPropsWithoutRef } from 'react';
 
 import { useStyles, useTheme } from './button.styles';
-import { Color } from '../Theme/Colors';
-import { Size } from '../Theme/Sizes';
+import { Color } from '../../theme/Colors';
+import { Size } from '../../theme/Sizes';
 
 export interface ButtonProps {
     block?: boolean;

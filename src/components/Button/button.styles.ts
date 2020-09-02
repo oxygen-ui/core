@@ -1,5 +1,5 @@
 import { createUseStyles } from 'react-jss';
-import Theme, { theming } from '../Theme';
+import Theme, { theming } from '../../theme';
 
 const stylesheet = (theme: Theme) => ({
     button: () => ({
