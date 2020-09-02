@@ -2,7 +2,7 @@ import React, { forwardRef, ComponentPropsWithoutRef, useContext } from 'react';
 
 import { useStyles } from './button.styles';
 import { ThemeContext, Color, Size } from '../../theme';
-import GetThemeType from '../../utils/GetThemeType';
+import ParseThemeType from '../../utils/ParseThemeType';
 
 export interface ButtonProps {
     block?: boolean;
@@ -24,7 +24,7 @@ const Button = forwardRef<HTMLButtonElement, CombinedProps>(
             disabled,
             isLoading,
             size,
-            themeType: GetThemeType(themeType),
+            themeType: ParseThemeType(themeType),
         });
 
         return (

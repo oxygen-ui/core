@@ -5,6 +5,8 @@ interface BackgroundColors {
     info: string;
     success: string;
     warning: string;
+    light: string;
+    dark: string;
 }
 
 interface TextColors {
@@ -16,6 +18,8 @@ interface TextColors {
     warning: string;
     light: string;
     dark: string;
+    white: string;
+    black: string;
 }
 
 interface ColorTypes {
