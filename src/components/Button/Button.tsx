@@ -1,8 +1,8 @@
-import React, { forwardRef, ComponentPropsWithoutRef } from 'react';
+import React, { forwardRef, ComponentPropsWithoutRef, useContext } from 'react';
 
-import { useStyles, useTheme } from './button.styles';
-import { Color } from '../../theme/Colors';
-import { Size } from '../../theme/Sizes';
+import { useStyles } from './button.styles';
+import { ThemeContext, Color, Size } from '../../theme';
+import GetThemeType from '../../utils/GetThemeType';
 
 export interface ButtonProps {
     block?: boolean;
@@ -17,8 +17,15 @@ type CombinedProps = ButtonProps & ComponentPropsWithoutRef<'button'>;
 
 const Button = forwardRef<HTMLButtonElement, CombinedProps>(
     ({ block, children, className, color, disabled, isLoading, size, ...props }, ref) => {
-        const theme = useTheme();
-        const classes = useStyles({ block, color, disabled, isLoading, size, theme });
+        const { themeType } = useContext(ThemeContext);
+        const classes = useStyles({
+            block,
+            color,
+            disabled,
+            isLoading,
+            size,
+            themeType: GetThemeType(themeType),
+        });
 
         return (
             <button

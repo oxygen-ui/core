@@ -24,7 +24,7 @@ const defaultTheme: Theme = {
         },
         dark: {
             background: {
-                primary: '#007bff',
+                primary: '#ff0000',
                 secondary: '#6c757d',
                 error: '#dc3545',
                 info: '#17a2b8',
