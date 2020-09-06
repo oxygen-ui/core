@@ -18,7 +18,10 @@ const stylesheet = (theme: Theme) => ({
         cursor: 'pointer',
         padding: 10,
         '&:focus': {
-            outline: 'none',
+            outline: 0,
+            boxShadow: `0 0 0 0.2rem ${color(theme.colors[themeType].background.primary)
+                .lighten(0.8)
+                .string()}`,
         },
         '&:hover': {
             background: color(theme.colors[themeType].background.primary).darken(0.15).string(),
