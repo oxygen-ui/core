@@ -34,7 +34,11 @@ export const colors = (): JSX.Element => (
     </div>
 );
 
-export const block = (): JSX.Element => <Button block>Block Button</Button>;
+export const block = (): JSX.Element => (
+    <Button color="primary" block>
+        Block Button
+    </Button>
+);
 
 export const disabled = (): JSX.Element => (
     <div>
