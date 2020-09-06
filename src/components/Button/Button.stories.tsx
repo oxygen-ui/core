@@ -64,3 +64,31 @@ export const disabled = (): JSX.Element => (
         </Button>
     </div>
 );
+
+export const sizes = (): JSX.Element => (
+    <div>
+        <Button style={{ marginRight: 5 }} color="primary" size="small">
+            Small
+        </Button>
+        <Button style={{ margin: 10 }} color="primary" size="medium">
+            Medium
+        </Button>
+        <Button style={{ margin: 10 }} color="primary" size="large">
+            Large
+        </Button>
+    </div>
+);
+
+export const blockSizes = (): JSX.Element => (
+    <div>
+        <Button style={{ marginBottom: 10 }} color="primary" size="small" block>
+            Small
+        </Button>
+        <Button style={{ marginBottom: 10 }} color="primary" size="medium" block>
+            Medium
+        </Button>
+        <Button color="primary" size="large" block>
+            Large
+        </Button>
+    </div>
+);
