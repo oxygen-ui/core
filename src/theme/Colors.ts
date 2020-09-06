@@ -32,4 +32,12 @@ export default interface Colors {
     dark: ColorTypes;
 }
 
-export type Color = 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning';
+export type Color =
+    | 'primary'
+    | 'secondary'
+    | 'error'
+    | 'info'
+    | 'success'
+    | 'warning'
+    | 'light'
+    | 'dark';

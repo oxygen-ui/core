@@ -11,7 +11,7 @@ interface StyledButtonProps extends ButtonProps {
 
 const stylesheet = (theme: Theme) => ({
     button: ({ themeType, color, block }: StyledButtonProps) => {
-        const parsedColor = theme.colors[themeType].background[color || 'primary'];
+        const parsedColor = theme.colors[themeType].background[color || 'light'];
 
         const styles = {
             background: parsedColor,
