@@ -35,3 +35,32 @@ export const colors = (): JSX.Element => (
 );
 
 export const block = (): JSX.Element => <Button block>Block Button</Button>;
+
+export const disabled = (): JSX.Element => (
+    <div>
+        <Button style={{ marginRight: 5 }} color="primary" disabled>
+            Primary
+        </Button>
+        <Button style={{ margin: 10 }} color="secondary" disabled>
+            Secondary
+        </Button>
+        <Button style={{ margin: 10 }} color="success" disabled>
+            Success
+        </Button>
+        <Button style={{ margin: 10 }} color="info" disabled>
+            Info
+        </Button>
+        <Button style={{ margin: 10 }} color="warning" disabled>
+            Warning
+        </Button>
+        <Button style={{ margin: 10 }} color="error" disabled>
+            Error
+        </Button>
+        <Button style={{ margin: 10 }} color="light" disabled>
+            Light
+        </Button>
+        <Button style={{ marginLeft: 5 }} color="dark" disabled>
+            Dark
+        </Button>
+    </div>
+);

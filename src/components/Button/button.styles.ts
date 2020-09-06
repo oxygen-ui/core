@@ -10,8 +10,8 @@ interface StyledButtonProps extends ButtonProps {
 }
 
 const stylesheet = (theme: Theme) => ({
-    button: ({ themeType, color, block }: StyledButtonProps) => {
-        const parsedColor = theme.colors[themeType].background[color || 'light'];
+    button: ({ themeType, block, color, disabled }: StyledButtonProps) => {
+        let parsedColor = theme.colors[themeType].background[color || 'light'];
 
         const styles = {
             background: parsedColor,
@@ -31,6 +31,13 @@ const stylesheet = (theme: Theme) => ({
         };
 
         if (block) styles.width = '100%';
+        if (disabled) {
+            parsedColor = Color(parsedColor).fade(0.25).string();
+            styles.background = parsedColor;
+            styles.cursor = 'not-allowed';
+            styles['&:hover'] = { background: parsedColor };
+            styles['&:focus'] = { outline: 0, boxShadow: '0' };
+        }
 
         return styles;
     },
