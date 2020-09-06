@@ -10,24 +10,29 @@ interface StyledButtonProps extends ButtonProps {
 }
 
 const stylesheet = (theme: Theme) => ({
-    button: ({ themeType, color }: StyledButtonProps) => {
+    button: ({ themeType, color, block }: StyledButtonProps) => {
         const parsedColor = theme.colors[themeType].background[color || 'primary'];
 
-        return {
+        const styles = {
             background: parsedColor,
             border: 0,
             borderRadius: 5,
             color: ParseTextColor(parsedColor, theme, themeType),
             cursor: 'pointer',
             padding: 10,
+            width: 'auto',
             '&:focus': {
                 outline: 0,
                 boxShadow: `0 0 0 0.2rem ${Color(parsedColor).fade(0.5).string()}`,
             },
             '&:hover': {
-                background: Color(parsedColor).darken(0.15).string(),
+                background: Color(parsedColor).darken(0.08).string(),
             },
         };
+
+        if (block) styles.width = '100%';
+
+        return styles;
     },
 });
 
