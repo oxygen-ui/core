@@ -1,8 +1,9 @@
 import React, { forwardRef, ComponentPropsWithoutRef, useContext } from 'react';
 import classNames from 'classnames';
-import { useStyles } from './button.styles';
+
 import { ThemeContext, Color, Size } from '../../theme';
 import ParseThemeType from '../../utils/ParseThemeType';
+import { useStyles } from './button.styles';
 
 export interface ButtonProps {
     block?: boolean;

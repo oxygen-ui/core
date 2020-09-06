@@ -1,5 +1,5 @@
 import { createUseStyles } from 'react-jss';
-import color from 'color';
+import Color from 'color';
 
 import Theme, { theming } from '../../theme';
 import { ButtonProps } from './Button';
@@ -10,23 +10,25 @@ interface StyledButtonProps extends ButtonProps {
 }
 
 const stylesheet = (theme: Theme) => ({
-    button: ({ themeType }: StyledButtonProps) => ({
-        background: theme.colors[themeType].background.primary,
-        border: 0,
-        borderRadius: 5,
-        color: ParseTextColor(theme.colors[themeType].background.primary, theme, themeType),
-        cursor: 'pointer',
-        padding: 10,
-        '&:focus': {
-            outline: 0,
-            boxShadow: `0 0 0 0.2rem ${color(theme.colors[themeType].background.primary)
-                .lighten(0.8)
-                .string()}`,
-        },
-        '&:hover': {
-            background: color(theme.colors[themeType].background.primary).darken(0.15).string(),
-        },
-    }),
+    button: ({ themeType, color }: StyledButtonProps) => {
+        const parsedColor = theme.colors[themeType].background[color || 'primary'];
+
+        return {
+            background: parsedColor,
+            border: 0,
+            borderRadius: 5,
+            color: ParseTextColor(parsedColor, theme, themeType),
+            cursor: 'pointer',
+            padding: 10,
+            '&:focus': {
+                outline: 0,
+                boxShadow: `0 0 0 0.2rem ${Color(parsedColor).fade(0.5).string()}`,
+            },
+            '&:hover': {
+                background: Color(parsedColor).darken(0.15).string(),
+            },
+        };
+    },
 });
 
 export const useStyles = createUseStyles(stylesheet, { theming });
