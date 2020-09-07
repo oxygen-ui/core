@@ -96,3 +96,9 @@ export const blockSizes = (): JSX.Element => (
         </Button>
     </div>
 );
+
+export const actions = (): JSX.Element => (
+    <Button onClick={() => alert('world!')} color="primary">
+        Hello
+    </Button>
+);
