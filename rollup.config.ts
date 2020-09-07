@@ -3,6 +3,7 @@ import commonjs from '@rollup/plugin-commonjs';
 import external from 'rollup-plugin-peer-deps-external';
 import resolve from '@rollup/plugin-node-resolve';
 import postcss from 'rollup-plugin-postcss';
+import copy from 'rollup-plugin-copy';
 
 import pkg from './package.json';
 
@@ -27,6 +28,12 @@ export default {
         external(),
         resolve(),
         postcss(),
+        copy({
+            targets: [
+                { src: 'src/assets/css/fonts.css', dest: 'build' },
+                { src: 'src/assets/fonts/*', dest: 'build/fonts' },
+            ],
+        }),
         typescript({
             rollupCommonJSResolveHack: true,
             exclude: '**/__tests__/**',

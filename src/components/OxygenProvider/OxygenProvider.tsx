@@ -1,6 +1,6 @@
 import React, { FC, useState } from 'react';
 import 'normalize.css';
-import '../../assets/css/oxygen-ui.css';
+import '../../assets/oxygen-ui.css';
 
 import Theme, { theming, defaultTheme, ThemeType } from '../../theme';
 import { ThemeContextProvider } from '../../theme/ThemeContext';
