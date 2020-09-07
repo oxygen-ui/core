@@ -73,7 +73,7 @@ const Button = forwardRef<HTMLButtonElement, CombinedProps>(
             <button
                 ref={ref}
                 className={classNames(classes.button, className)}
-                disabled={disabled}
+                disabled={isLoading || disabled}
                 {...props}>
                 {isLoading && (
                     <Spinner
