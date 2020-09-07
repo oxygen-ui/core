@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 import { ThemeContext, Color, Size } from '../../theme';
 import ParseThemeType from '../../utils/ParseThemeType';
-import { useStyles } from './button.styles';
+import { useStyles } from './Button.styles';
 
 export interface ButtonProps {
     block?: boolean;
