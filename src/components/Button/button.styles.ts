@@ -21,6 +21,9 @@ const stylesheet = (theme: Theme) => ({
             cursor: 'pointer',
             fontSize: 'inherit',
             padding: 10,
+            transition: ['background', 'box-shadow'],
+            transitionDuration: 175,
+            transitionTimingFunction: 'ease-in-out',
             width: 'auto',
             '&:focus': {
                 outline: 0,
@@ -29,9 +32,6 @@ const stylesheet = (theme: Theme) => ({
             '&:hover': {
                 background: Color(parsedColor).darken(0.08).string(),
             },
-            transition: ['background', 'box-shadow'],
-            transitionDuration: 175,
-            transitionTimingFunction: 'ease-in-out',
         };
 
         if (block) styles.width = '100%';
