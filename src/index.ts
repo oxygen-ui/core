@@ -7,5 +7,8 @@ export * from './components/OxygenProvider';
 export { default as Spinner } from './components/Spinner';
 export * from './components/Spinner';
 
+export { default as Tabs } from './components/Tabs';
+export * from './components/Tabs';
+
 export { default as ThemeContext } from './theme/ThemeContext';
 export * from './theme/ThemeContext';
